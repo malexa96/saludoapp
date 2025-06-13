@@ -1,15 +1,13 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven 3.9.10'
-        jdk 'JDK24'
+        maven 'Maven'
+        jdk 'JDK'
     }
     stages {
         stage('Clonar') {
             steps {
-            git url
-            'https://github.com/malexa96/saludoapp.git'
-            }
+            git branch: 'main', url: 'https://github.com/malexa96/saludoapp.git'
         }
         stage('Compilar') {
             steps {
